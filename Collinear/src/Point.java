@@ -50,6 +50,9 @@ public class Point implements Comparable<Point> {
      * @return the slope between this point and the specified point
      */
     public double slopeTo(Point that) {
+        if (that == null)
+            throw new java.lang.NullPointerException("Argument is null");
+
         if (Integer.compare(this.y, that.y) == 0)
             return 0.0;
         else if (Integer.compare(this.x, that.x) == 0)
@@ -93,6 +96,9 @@ public class Point implements Comparable<Point> {
 
     private static class SortComparator implements Comparator<Point> {
         public int compare(Point o1, Point o2) {
+            if (o1 == null || o2 == null)
+                throw new java.lang.NullPointerException("Argument is null");
+
             return o1.compareTo(o2);
         }
     }

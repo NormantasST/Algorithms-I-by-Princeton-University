@@ -16,7 +16,9 @@ public class BruteCollinearPoints {
                         for (int o = k + 1; o < size; ) { // 4th Cycle
                             double finalSlope = points[k].slopeTo(points[o]);
                             if (Double.compare(slope, finalSlope) == 0) {
-                                LineSegments.add(new LineSegment(points[i], points[o])); // TODO might need fixing
+                                LineSegments.add(new LineSegment(points[i], points[j])); // TODO might need fixing
+                                LineSegments.add(new LineSegment(points[j], points[k]));
+                                LineSegments.add(new LineSegment(points[k], points[o]));
                             }
                         }
                 }
